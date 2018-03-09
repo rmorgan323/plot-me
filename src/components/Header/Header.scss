@@ -1,0 +1,13 @@
+@import '../../variables.scss';
+
+.Header {
+  background-color: $grey6;
+  color: #fff;
+
+  h1 {
+    @include match-h2;
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+  }
+}
