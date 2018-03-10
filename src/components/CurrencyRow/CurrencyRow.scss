@@ -1,9 +1,23 @@
 @import '../../variables.scss';
 
+a {
+  text-decoration: none;
+}
+
 .CurrencyRow {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  cursor: pointer;
+  border-bottom: 1px solid $grey2;
 
   p {
     margin: 0 5px;
   }
+
+}
+
+.CurrencyRow:hover {
+  background-color: $grey1;
 }
