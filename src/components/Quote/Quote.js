@@ -29,16 +29,6 @@ class Quote extends Component {
         <Plot 
           data={[
             {
-              type: 'bar',
-              x: this.state.cleanData.vx,
-              y: this.state.cleanData.vy,
-              marker: { 
-                color: 'rgba(0,177,76,1)'
-              },
-              name: 'volume',
-              hoverinfo: 'none'
-            },
-            {
               type: 'scatter',
               mode: 'none',
               x: this.state.cleanData.x,
@@ -50,6 +40,20 @@ class Quote extends Component {
               hoverinfo: 'text+name',
               hoverlabel: { font: { color: '#ffffff' }, bordercolor: '#ffffff' },
               text: this.state.cleanData.y
+            },
+            {
+              type: 'bar',
+              x: this.state.cleanData.vx,
+              y: this.state.cleanData.vy,
+              marker: { 
+                color: 'rgba(0,177,76,1)',
+                line: {
+                  color: 'rgb(255,255,255,1)',
+                  width: .5
+                }
+              },
+              name: 'volume',
+              hoverinfo: 'none'
             }
           ]}
           layout={{

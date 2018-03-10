@@ -48,9 +48,25 @@ a {
   justify-content: space-between;
   padding: 10px 40px;
   cursor: pointer;
-  border-bottom: 1px solid #d1d3d4; }
+  border-bottom: 1px solid #d1d3d4;
+  transition: all .2s ease-in-out; }
   .CurrencyRow p {
-    margin: 0 5px; }
+    margin: 0 5px;
+    text-align: left; }
+  .CurrencyRow .chart {
+    width: 161px;
+    height: 50px; }
+  .CurrencyRow .width-0 {
+    width: 100px;
+    text-align: left; }
+  .CurrencyRow .width-1 {
+    width: 50px; }
+  .CurrencyRow .width-2 {
+    width: 100px;
+    text-align: right; }
+  .CurrencyRow .width-3 {
+    width: 140px;
+    text-align: right; }
 
 .CurrencyRow:hover {
   background-color: #f1f2f2; }
