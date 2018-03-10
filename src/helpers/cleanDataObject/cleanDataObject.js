@@ -17,14 +17,14 @@ const cleanDataObject = rawData => {
     accum.y.unshift(Math.floor(rawData[0]['Time Series (Digital Currency Intraday)'][keys[index]]['1b. price (USD)']))
     accum.vy.unshift(Math.floor(rawData[0]['Time Series (Digital Currency Intraday)'][keys[index]]['2. volume']))
   })
-  accum.x = accum.x.slice(175, accum.x.length - 1)
-  accum.y = accum.y.slice(175, accum.y.length - 1)
-  accum.vy = accum.vy.slice(175, accum.vy.length - 1)
-  let ymin = Math.floor(Math.min(...accum.y));
-  let ymax = Math.floor(Math.max(...accum.y));
-  let vymin = Math.floor(Math.min(...accum.vy));
-  let vymax = Math.floor(Math.max(...accum.vy));  
-  let vyRatio = (ymin * .05) / vymin
+  accum.x = accum.x.slice(300, accum.x.length - 1)
+  accum.y = accum.y.slice(300, accum.y.length - 1)
+  accum.vy = accum.vy.slice(300, accum.vy.length - 1)
+  const ymin = Math.floor(Math.min(...accum.y));
+  const ymax = Math.floor(Math.max(...accum.y));
+  const vymin = Math.floor(Math.min(...accum.vy));
+  // const vymax = Math.floor(Math.max(...accum.vy));  
+  const vyRatio = (ymin * .05) / vymin
 
   accum.yrange = [ymin * .8, ymax * 1.05]
   accum.vx = accum.x
