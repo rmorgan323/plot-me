@@ -16,7 +16,7 @@ class Home extends Component {
 
   componentDidMount = async () => {
     // let currenciesOnLoad = ['BTC', 'ETH', 'XRP', 'BCH', 'LTC', 'NEO', 'XLM', 'ADA', 'EOS', 'XMR', 'DASH', 'IOT', 'XEM', 'USDT', 'ETC', 'TRX', 'VEN', 'LSK', 'QTUM', 'BTG']
-    let currenciesOnLoad = ['BTC']
+    let currenciesOnLoad = ['BTC', 'ETH', 'XRP', 'BCH', 'LTC']
     let currencyData = await getCurrencies(currenciesOnLoad);
     this.setState({ currencyData: currencyData })
   }
@@ -24,7 +24,6 @@ class Home extends Component {
   displayMetaData = () => {
     if (this.state.currencyData.length) {
       const display = this.state.currencyData.map((currency, index) => {
-        console.log(currency)
         const keys = Object.keys(currency['Time Series (Digital Currency Intraday)']);
         const marketCap = currency['Time Series (Digital Currency Intraday)'][keys[0]]['3. market cap (USD)']
         const price = currency['Time Series (Digital Currency Intraday)'][keys[0]]['1b. price (USD)']
@@ -40,9 +39,9 @@ class Home extends Component {
             abbreviation={currency['Meta Data']['2. Digital Currency Code']}
             marketCap={accounting.formatMoney(marketCap)}
             price={accounting.formatMoney(price)}
-            change={change}
+            change={(change * 100).toFixed(2)}
             volumeDollars={accounting.formatMoney(volumeDollars)}
-            volume={volume.toFixed(0)}
+            volume={accounting.formatNumber(Math.floor(volume))}
           />
         )       
       })
