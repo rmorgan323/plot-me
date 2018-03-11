@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.Quote {
+  .plotly-graph {
+    margin-top: 500px;
+  }
+
+  .quote-chart {
+    margin-top: 100px;
+    width: 483px;
+    height: 180px;
+    border: 1px solid $grey1;
+    border-top: 1px solid $grey2;
+    border-bottom: 1px solid $grey2;
+    /*border-right: 2px solid $grey4;*/
+    /*border-bottom: 2px solid $grey4;*/
+  }
+
+}

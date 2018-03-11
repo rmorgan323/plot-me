@@ -43,13 +43,16 @@ a {
   text-decoration: none; }
 
 .CurrencyRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  cursor: pointer;
-  border-bottom: 1px solid #d1d3d4;
+  border-bottom: 1px solid #f1f2f2;
   transition: all .2s ease-in-out; }
+  .CurrencyRow .currency-container {
+    width: 1040px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    cursor: pointer;
+    margin: auto; }
   .CurrencyRow p {
     margin: 0 5px;
     text-align: left; }
@@ -67,6 +70,23 @@ a {
   .CurrencyRow .width-3 {
     width: 140px;
     text-align: right; }
+  .CurrencyRow .light {
+    font-weight: 500; }
+  .CurrencyRow .light-grey {
+    font-weight: 500;
+    color: #a7a9ac; }
+  .CurrencyRow .currency-index {
+    width: 18px; }
+  .CurrencyRow .currency-name {
+    font-size: 17px;
+    font-weight: 900; }
+  .CurrencyRow .currency-abbr {
+    font-size: 12px;
+    font-weight: 900; }
+  .CurrencyRow .currency-volume {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
 
 .CurrencyRow:hover {
-  background-color: #f1f2f2; }
+  background-color: #f9fafa; }
