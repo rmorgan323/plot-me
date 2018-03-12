@@ -17,7 +17,7 @@ class Home extends Component {
 
   componentDidMount = async () => {
     // let currenciesOnLoad = ['BTC', 'ETH', 'XRP', 'BCH', 'LTC', 'NEO', 'XLM', 'ADA', 'EOS', 'XMR', 'DASH', 'IOT', 'XEM', 'USDT', 'ETC', 'TRX', 'VEN', 'LSK', 'QTUM', 'BTG']
-    let currenciesOnLoad = ['BTC', 'ETH', 'XRP', 'BCH']
+    let currenciesOnLoad = ['BTC', 'ETH']
     let currencyData = await getCurrencies(currenciesOnLoad);
     this.setState({ currencyData: currencyData })
   }
@@ -31,7 +31,7 @@ class Home extends Component {
         const change = -1 + (price / currency['Time Series (Digital Currency Intraday)'][keys[keys.length - 1]]['1b. price (USD)'])
         const volume = currency['Time Series (Digital Currency Intraday)'][keys[0]]['2. volume']
         const volumeDollars = volume * price;
-        const points = formatPoints(currency);
+        const points = formatPoints(currency, true);
 
         return (
           <CurrencyRow 

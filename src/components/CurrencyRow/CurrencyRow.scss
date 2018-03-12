@@ -5,13 +5,18 @@ a {
 }
 
 .CurrencyRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  cursor: pointer;
-  border-bottom: 1px solid $grey2;
+  border-bottom: 1px solid $grey1;
   @include std-transition;
+
+  .currency-container {
+    width: 1040px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    cursor: pointer;
+    margin: auto;
+  }
 
   p {
     margin: 0 5px;
@@ -42,8 +47,37 @@ a {
     text-align: right;
   }
 
+  .light {
+    font-weight: 500;
+  }
+
+  .light-grey {
+    font-weight: 500;
+    color: $grey3;
+  }
+
+  .currency-index {
+    width: 18px;
+  }
+
+  .currency-name {
+    font-size: 17px;
+    font-weight: 900;
+  }
+
+  .currency-abbr {
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .currency-volume {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
 }
 
 .CurrencyRow:hover {
-  background-color: $grey1;
+  background-color: $grey05;
 }
