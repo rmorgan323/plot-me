@@ -15,8 +15,8 @@ class Routes extends Component {
           <Route path="/plotme/quote/:ticker" component={Quote} />
         </Switch>
       </div>
-    )
-  };
-};
+    );
+  }
+}
 
 export default Routes;

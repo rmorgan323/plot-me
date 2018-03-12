@@ -1,0 +1,42 @@
+@import '../../variables.scss';
+
+.QuoteMeta {
+  width: 800px;
+  margin: auto;
+  text-align: left;
+  padding-top: 18px;
+
+  h2, h3, h4, h5 {
+    margin: 0;
+  }
+
+  h3 {
+    color: $grey4;
+    font-weight: 500;
+  }
+
+  h5 {
+    margin-top: 10px;
+    color: $grey4;
+    font-weight: 100;
+  }
+
+  .meta-price-container {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin-left: 10px;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .change-green {
+    color: green;
+  }
+
+  .change-red {
+    color: red;
+  }
+}

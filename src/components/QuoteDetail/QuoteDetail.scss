@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.QuoteDetail {
+  box-sizing: border-box;
+  width: 800px;
+  background-color: #fff;
+  text-align: unset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  .details-pair {
+    width: 360px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid $grey1;
+
+
+    p {
+      font-weight: 100;
+    }
+  }
+}

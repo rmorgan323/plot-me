@@ -10,7 +10,7 @@ const Header = () => {
         <h1>plot<span className="header-span">me</span></h1>
       </NavLink>
     </div>
-  )
-}
+  );
+};
 
 export default Header;
