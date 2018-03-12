@@ -1,4 +1,4 @@
-const formatPoints = (rawData) => {
+const formatPoints = (rawData, home) => {
   // console.log(rawData)
   const keys = Object.keys(rawData['Time Series (Digital Currency Intraday)']).slice(300, rawData['Time Series (Digital Currency Intraday)'].length);
   let highValue = 0;
@@ -19,7 +19,11 @@ const formatPoints = (rawData) => {
   const range = highValue - lowValue;
   const adjustmentValue = 100 / range;
   array = array.map(pair => {
-    pair[1] = 100 - Math.ceil((pair[1] - lowValue) * adjustmentValue);
+    if (home) {
+      pair[1] = 100 - Math.ceil((pair[1] - lowValue) * adjustmentValue);
+    } else {
+      pair[1] = 120 - Math.ceil((pair[1] - lowValue) * adjustmentValue);
+    }
     return pair.toString();
   })
   return [array.join(' '), colorValue];

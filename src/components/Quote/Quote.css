@@ -39,15 +39,15 @@ p {
   text-align: center; }
 
 /***  MIXINS  ***/
-.Quote .plotly-graph {
-  margin-top: 500px; }
-
-.Quote .quote-chart {
-  margin-top: 100px;
-  width: 483px;
-  height: 180px;
-  border: 1px solid #f1f2f2;
-  border-top: 1px solid #d1d3d4;
-  border-bottom: 1px solid #d1d3d4;
-  /*border-right: 2px solid $grey4;*/
-  /*border-bottom: 2px solid $grey4;*/ }
+.Quote {
+  background-color: #f1f2f2;
+  min-height: calc(100vh - 86px); }
+  .Quote .plotly-graph {
+    margin-top: 100px;
+    margin-bottom: 100px; }
+  .Quote .quote-chart {
+    margin-top: 100px;
+    width: 640px;
+    height: 280px;
+    border: 1px solid #d1d3d4;
+    cursor: crosshair; }

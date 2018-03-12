@@ -1,7 +1,6 @@
 import moment from 'moment';
 import accounting from 'accounting';
 
-
 const cleanDataObject = rawData => {
   const keys = Object.keys(rawData[0]['Time Series (Digital Currency Intraday)']);
   let accum = {
@@ -10,16 +9,34 @@ const cleanDataObject = rawData => {
     x: [],
     y: [],
     vx: [],
-    vy: []
+    vy: [],
+    dateTimeRange: [moment(Date.now()).subtract('days', 1).format(), Date.now()],
+    dateTimeVals: [],
+    dateTimeLabels: []
   };
   const cleanedUp = keys.forEach((timeDataPoint, index) => {   
     accum.x.unshift(moment(keys[index]).subtract(7, 'hours').format()),
     accum.y.unshift(Math.floor(rawData[0]['Time Series (Digital Currency Intraday)'][keys[index]]['1b. price (USD)']))
     accum.vy.unshift(Math.floor(rawData[0]['Time Series (Digital Currency Intraday)'][keys[index]]['2. volume']))
+    if (timeDataPoint.includes('00:00:00')) {
+      accum.dateTimeVals.unshift(timeDataPoint);
+      const day = moment(timeDataPoint).format('dddd');
+      accum.dateTimeLabels.unshift(`12am ${day}`);
+    } else if (timeDataPoint.includes('06:00:00')) {
+      accum.dateTimeVals.unshift(timeDataPoint);
+      accum.dateTimeLabels.unshift('6am');
+    } else if (timeDataPoint.includes('12:00:00')) {
+      accum.dateTimeVals.unshift(timeDataPoint);
+      accum.dateTimeLabels.unshift('12pm');
+    } else if (timeDataPoint.includes('18:00:00')) {
+      accum.dateTimeVals.unshift(timeDataPoint);
+      accum.dateTimeLabels.unshift('6pm');
+    }
   })
-  accum.x = accum.x.slice(300, accum.x.length - 1)
-  accum.y = accum.y.slice(300, accum.y.length - 1)
-  accum.vy = accum.vy.slice(300, accum.vy.length - 1)
+
+  // accum.x = accum.x.slice(0, accum.x.length - 1)
+  // accum.y = accum.y.slice(0, accum.y.length - 1)
+  // accum.vy = accum.vy.slice(0, accum.vy.length - 1)
   const ymin = Math.floor(Math.min(...accum.y));
   const ymax = Math.floor(Math.max(...accum.y));
   const vymin = Math.floor(Math.min(...accum.vy));
