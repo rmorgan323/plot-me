@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import QuoteMeta from '../QuoteMeta/QuoteMeta';
+import QuoteDetail from '../QuoteDetail/QuoteDetail';
 import getCurrencies from '../../helpers/getCurrencies/getCurrencies';
 import cleanDataObject from '../../helpers/cleanDataObject/cleanDataObject';
 import formatPoints from '../../helpers/formatPoints/formatPoints';
 import formatVolume from '../../helpers/formatVolume/formatVolume';
 import formatCurrencyData from '../../helpers/formatCurrencyData/formatCurrencyData';
-import './Quote.css';
 import Plot from 'react-plotly.js';
 import moment from 'moment';
+import './Quote.css';
 
 class Quote extends Component {
   constructor() {
@@ -76,6 +78,9 @@ class Quote extends Component {
   render() {
     return (
       <div className="Quote">
+        <QuoteMeta 
+          metaData={this.state.formattedMetaData}
+        />
         <Plot 
           className="plotly-graph"
           data={[
@@ -157,6 +162,9 @@ class Quote extends Component {
             position: .5,
             plot_bgcolor: '#fff'
           }}
+        />
+        <QuoteDetail 
+          metaData={this.state.formattedMetaData}
         />
       </div> 
     )

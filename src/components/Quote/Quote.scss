@@ -3,10 +3,11 @@
 .Quote {
   background-color: $grey1;
   min-height: calc(100vh - 86px);
+  padding-bottom: 50px;
 
   .plotly-graph {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .quote-chart {
