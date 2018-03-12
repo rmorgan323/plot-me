@@ -1,5 +1,6 @@
 import React from 'react';
 import './QuoteMeta.css';
+import { PropTypes } from 'prop-types';
 
 const QuoteMeta = ({ metaData }) => {
   const { name, abbr, update, price, change } = metaData;
@@ -13,7 +14,11 @@ const QuoteMeta = ({ metaData }) => {
       </div>
       <h5>As of {update}.</h5>
     </div>
-  )
-}
+  );
+};
 
 export default QuoteMeta;
+
+QuoteMeta.propTypes = {
+  metaData: PropTypes.object
+};

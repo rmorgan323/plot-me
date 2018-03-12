@@ -7,7 +7,6 @@ import formatPoints from '../../helpers/formatPoints/formatPoints';
 import formatVolume from '../../helpers/formatVolume/formatVolume';
 import formatCurrencyData from '../../helpers/formatCurrencyData/formatCurrencyData';
 import Plot from 'react-plotly.js';
-import moment from 'moment';
 import './Quote.css';
 
 class Quote extends Component {
@@ -29,7 +28,7 @@ class Quote extends Component {
       currencyData: '',
       volumeData: [],
       formattedMetaData: {}
-    }
+    };
   }
 
   componentDidMount = async () => {
@@ -37,22 +36,31 @@ class Quote extends Component {
     const ticker = path[path.length - 1];
     const rawData = await getCurrencies([ticker]);
     const cleanData = await cleanDataObject(rawData);
-    this.setState({ cleanData: cleanData })
+    this.setState({ cleanData: cleanData });
     
-    const currencyData = await formatPoints(rawData[0])
-    this.setState({ currencyData: currencyData })
+    const currencyData = await formatPoints(rawData[0]);
+    this.setState({ currencyData: currencyData });
 
-    const volumeData = await formatVolume(rawData[0])
-    this.setState({ volumeData: volumeData })
+    const volumeData = await formatVolume(rawData[0]);
+    this.setState({ volumeData: volumeData });
 
     const formattedMetaData = await formatCurrencyData(rawData[0]);
-    this.setState({ formattedMetaData: formattedMetaData })
+    this.setState({ formattedMetaData: formattedMetaData });
   }
        
   bars = () => {
     const buildBars = this.state.volumeData.map((volumeValue, index) => {
-      return <rect key={index} x={index * 2} y={140 - volumeValue} width="1.5" height={volumeValue} style={{fill: 'rgba(255,255,255,.2)'}} />
-    })
+      return (
+        <rect 
+          key={index} 
+          x={index * 2} 
+          y={140 - volumeValue} 
+          width="1.5" 
+          height={volumeValue} 
+          style={{fill: 'rgba(255,255,255,.2)'}} 
+        />
+      );
+    });
 
     return buildBars;
   } 
@@ -61,20 +69,20 @@ class Quote extends Component {
     return (
       <svg viewBox="0 0 320 140" className="quote-chart">
         <polyline
-           fill={this.state.currencyData[1]}
-           stroke={this.state.currencyData[1]}
-           strokeWidth="1"
-           points={'0,140 ' + this.state.currencyData[0] + ' 320,140'}
-           strokeLinejoin="round"
+          fill={this.state.currencyData[1]}
+          stroke={this.state.currencyData[1]}
+          strokeWidth="1"
+          points={'0,140 ' + this.state.currencyData[0] + ' 320,140'}
+          strokeLinejoin="round"
         />
         <rect width="80.5" height="140" style={{fill: 'rgba(0,0,0,.05)'}} />
         <rect x="161" width="80.5" height="140" style={{fill: 'rgba(0,0,0,.05)'}} />
         {this.bars()}
       </svg>
-    )
+    );
   }
 
-        // {this.displayDayGraph()}
+  // {this.displayDayGraph()}
   render() {
     return (
       <div className="Quote">
@@ -97,7 +105,7 @@ class Quote extends Component {
               hoverlabel: { font: { color: '#ffffff' }, bordercolor: '#ffffff', bgcolor: '#008a2d' },
               text: this.state.cleanData.y,
               hovermode: 'closest'
-            },
+            }
             // {
             //   type: 'bar',
             //   x: this.state.cleanData.vx,
@@ -160,14 +168,14 @@ class Quote extends Component {
             },
             anchor: 'free',
             position: .5,
-            plot_bgcolor: '#fff'
+            plot_bgcolor: '#fff'  // eslint-disable-line camelcase
           }}
         />
         <QuoteDetail 
           metaData={this.state.formattedMetaData}
         />
       </div> 
-    )
+    );
   }
 }
 

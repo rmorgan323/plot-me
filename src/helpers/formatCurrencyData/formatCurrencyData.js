@@ -17,9 +17,9 @@ const formatCurrencyData = (rawData) => {
     volume: accounting.formatNumber(Math.floor(rawData['Time Series (Digital Currency Intraday)'][keys[0]]['2. volume'])),
     volumeDollars: accounting.formatMoney((calcVolume * calcPrice), '$', 0),
     points: formatPoints(rawData, true)
-  }
+  };
 
   return result;
-}
+};
 
 export default formatCurrencyData;

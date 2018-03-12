@@ -1,6 +1,7 @@
 import React from 'react';
 import './CurrencyRow.css';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CurrencyRow = ({ index, currency, abbreviation, marketCap, price, change, volumeDollars, volume, points, chartColor }) => {
 
@@ -22,17 +23,30 @@ const CurrencyRow = ({ index, currency, abbreviation, marketCap, price, change, 
           </div>
           <svg viewBox="0 0 322 100" className="chart">
             <polyline
-               fill="none"
-               stroke={chartColor}
-               strokeWidth="4"
-               points={points}
-               strokeLinejoin="round"
+              fill="none"
+              stroke={chartColor}
+              strokeWidth="4"
+              points={points}
+              strokeLinejoin="round"
             />
           </svg>
         </div>
       </div>
     </NavLink>
-  )
-}
+  );
+};
 
 export default CurrencyRow;
+
+CurrencyRow.propTypes = {
+  index: PropTypes.number,
+  currency: PropTypes.string,
+  abbreviation: PropTypes.string,
+  marketCap: PropTypes.number,
+  price: PropTypes.number,
+  change: PropTypes.number,
+  volumeDollars: PropTypes.number,
+  volume: PropTypes.number,
+  points: PropTypes.string,
+  chartColor: PropTypes.string
+};

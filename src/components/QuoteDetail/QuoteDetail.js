@@ -1,5 +1,6 @@
 import React from 'react';
 import './QuoteDetail.css';
+import PropTypes from 'prop-types';
 
 const QuoteDetail = ({ metaData }) => {
   const { price, marketCap, volume, volumeDollars } = metaData;
@@ -23,7 +24,11 @@ const QuoteDetail = ({ metaData }) => {
         <p><strong>{volumeDollars}</strong></p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default QuoteDetail;
+
+QuoteDetail.propTypes = {
+  metaData: PropTypes.object
+};
