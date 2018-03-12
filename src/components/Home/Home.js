@@ -11,13 +11,13 @@ class Home extends Component {
     super();
 
     this.state = {
-      currencyData: []
+      currencyData: [],
     }
   }
 
   componentDidMount = async () => {
     // let currenciesOnLoad = ['BTC', 'ETH', 'XRP', 'BCH', 'LTC', 'NEO', 'XLM', 'ADA', 'EOS', 'XMR', 'DASH', 'IOT', 'XEM', 'USDT', 'ETC', 'TRX', 'VEN', 'LSK', 'QTUM', 'BTG']
-    let currenciesOnLoad = ['BTC', 'ETH']
+    let currenciesOnLoad = ['BTC']
     let currencyData = await getCurrencies(currenciesOnLoad);
     this.setState({ currencyData: currencyData })
   }

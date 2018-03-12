@@ -3,6 +3,7 @@ import getCurrencies from '../../helpers/getCurrencies/getCurrencies';
 import cleanDataObject from '../../helpers/cleanDataObject/cleanDataObject';
 import formatPoints from '../../helpers/formatPoints/formatPoints';
 import formatVolume from '../../helpers/formatVolume/formatVolume';
+import formatCurrencyData from '../../helpers/formatCurrencyData/formatCurrencyData';
 import './Quote.css';
 import Plot from 'react-plotly.js';
 import moment from 'moment';
@@ -24,7 +25,8 @@ class Quote extends Component {
         dateTimeLabels: []
       },
       currencyData: '',
-      volumeData: []
+      volumeData: [],
+      formattedMetaData: {}
     }
   }
 
@@ -36,11 +38,13 @@ class Quote extends Component {
     this.setState({ cleanData: cleanData })
     
     const currencyData = await formatPoints(rawData[0])
-    console.log(currencyData)
     this.setState({ currencyData: currencyData })
 
     const volumeData = await formatVolume(rawData[0])
     this.setState({ volumeData: volumeData })
+
+    const formattedMetaData = await formatCurrencyData(rawData[0]);
+    this.setState({ formattedMetaData: formattedMetaData })
   }
        
   bars = () => {

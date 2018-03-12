@@ -26,7 +26,7 @@ const CurrencyRow = ({ index, currency, abbreviation, marketCap, price, change, 
                stroke={chartColor}
                strokeWidth="4"
                points={points}
-               stroke-linejoin="round"
+               strokeLinejoin="round"
             />
           </svg>
         </div>
