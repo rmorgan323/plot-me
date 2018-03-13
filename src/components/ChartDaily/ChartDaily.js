@@ -1,9 +1,10 @@
 import React from 'react';
 import './ChartDaily.css';
 import Plot from 'react-plotly.js';
+import PropTypes from 'prop-types';
 
 const ChartDaily = ({ cleanDailyData, currencyName }) => {
-  const { x, y, vx, vy, dateLabels } = cleanDailyData;
+  const { x, y } = cleanDailyData;
 
   return (
     <div className="ChartDaily">
@@ -25,7 +26,7 @@ const ChartDaily = ({ cleanDailyData, currencyName }) => {
                 color: '#fff'
               }, 
               bordercolor: '#fff', 
-              bgcolor: x[0] < x[x.length - 1] ? 'rgba(0,177,76,.6)' : 'rgba(189,32,37,.6)',
+              bgcolor: x[0] < x[x.length - 1] ? 'rgba(0,177,76,.6)' : 'rgba(189,32,37,.6)'
             },
             text: y,
             hovermode: 'closest'
@@ -94,6 +95,11 @@ const ChartDaily = ({ cleanDailyData, currencyName }) => {
       />
     </div>
   );
-}
+};
 
 export default ChartDaily;
+
+ChartDaily.propTypes = {
+  cleanDailyData: PropTypes.object,
+  currencyName: PropTypes.string
+};

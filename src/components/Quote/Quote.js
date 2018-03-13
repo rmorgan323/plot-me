@@ -63,7 +63,7 @@ class Quote extends Component {
 
     const rawDailyData = await getDailyData(ticker);
     const cleanDailyData = await cleanDailyDataObject(rawDailyData);
-    this.setState({ cleanDailyData: cleanDailyData })
+    this.setState({ cleanDailyData: cleanDailyData });
     // const volumeData = await formatVolume(rawData[0]);
     // this.setState({ volumeData: volumeData });
 
@@ -105,7 +105,7 @@ class Quote extends Component {
   // }
 
   handleChartChange = (type) => {
-    this.setState({ currentTab: type })
+    this.setState({ currentTab: type });
   }
 
   displayChart = () => {
@@ -116,7 +116,7 @@ class Quote extends Component {
           currencyData={this.state.currencyData}
           formattedMetaData={this.state.formattedMetaData}
         />
-      )
+      );
     }
     if (this.state.currentTab === 'daily') {
       return (
@@ -124,7 +124,7 @@ class Quote extends Component {
           currencyName={this.state.cleanData.currency}
           cleanDailyData={this.state.cleanDailyData}
         />
-      )
+      );
     }
   }
 

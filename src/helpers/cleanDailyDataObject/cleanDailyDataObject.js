@@ -12,7 +12,7 @@ const cleanDailyDataObject = (rawData) => {
     highSinceOldest: 0,
     lowSinceOldest: 1000000000,
     dateLabels: []
-  }
+  };
   keys.forEach((key, index) => {
     const day = rawData['Time Series (Digital Currency Daily)'][key];
     const dailyClose = Math.floor(day['4b. close (USD)']);
@@ -36,6 +36,6 @@ const cleanDailyDataObject = (rawData) => {
   });
 
   return accum;
-}
+};
 
 export default cleanDailyDataObject;
