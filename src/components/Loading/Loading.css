@@ -39,20 +39,7 @@ p {
   text-align: center; }
 
 /***  MIXINS  ***/
-.Quote {
-  background-color: #f1f2f2;
-  min-height: calc(100vh - 86px);
-  padding-bottom: 50px; }
-  .Quote .plotly-graph {
-    margin-top: 20px;
-    margin-bottom: 20px; }
-  .Quote .quote-chart {
-    margin-top: 100px;
-    width: 640px;
-    height: 280px;
-    border: 1px solid #d1d3d4;
-    cursor: crosshair; }
-  .Quote .change-red {
-    color: #bd2025; }
-  .Quote .change-green {
-    color: #00b14c; }
+.Loading .loading-gif {
+  display: block;
+  width: 40px;
+  margin: 200px auto; }

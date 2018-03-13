@@ -9,10 +9,10 @@ a {
   @include std-transition;
 
   .currency-container {
-    width: 1040px;
+    width: 933px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 10px 40px;
     cursor: pointer;
     margin: auto;
@@ -26,24 +26,14 @@ a {
   .chart {
     width: 161px;
     height: 50px;
+    margin-left: 43px;
   }
 
-  .width-0 {
-    width: 106px;
+  .t-left {
     text-align: left;
   }
 
-  .width-1 {
-    width: 50px;
-  }
-
-  .width-2 {
-    width: 100px;
-    text-align: right;
-  }
-
-  .width-3 {
-    width: 140px;
+  .t-right {
     text-align: right;
   }
 
@@ -57,7 +47,11 @@ a {
   }
 
   .currency-index {
-    width: 18px;
+    width: 25px;
+  }
+
+  .currency-info {
+    width: 150px;
   }
 
   .currency-name {
@@ -70,7 +64,20 @@ a {
     font-weight: 900;
   }
 
+  .currency-cap {
+    width: 121px;
+  }
+
+  .currency-price {
+    width: 100px;
+  }
+
+  .currency-change {
+    width: 100px;
+  }
+
   .currency-volume {
+    width: 192px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

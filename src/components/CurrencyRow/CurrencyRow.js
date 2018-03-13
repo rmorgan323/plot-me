@@ -3,28 +3,28 @@ import './CurrencyRow.css';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const CurrencyRow = ({ index, currency, abbreviation, marketCap, price, change, volumeDollars, volume, points, chartColor }) => {
+const CurrencyRow = ({ index, currency, abbreviation, marketCap, price, change, volumeDollars, volume, points }) => {
 
   return (
     <NavLink className="links" to={`/plotme/quote/${abbreviation}`}>
       <div className="CurrencyRow">
         <div className="currency-container">
-          <p className="width-1 light currency-index">{index}</p>
+          <p className="light currency-index">{index}</p>
           <div className="currency-info">
-            <p className="width-0 currency-name">{currency}</p>
-            <p className="width-1 currency-abbr">{abbreviation}</p>
+            <p className="t-left currency-name">{currency}</p>
+            <p className="currency-abbr">{abbreviation}</p>
           </div>
-          <p className="width-3 light">{marketCap}</p>
-          <p className="width-2 light">{price}</p>
-          <p className="width-1 light" style={{color: chartColor}} >{change}%</p>
+          <p className="t-right light currency-cap">{marketCap}</p>
+          <p className="t-right light currency-price">{price}</p>
+          <p className="t-right light currency-change" style={change[0] === '+' ? {color: 'rgba(0,177,76,1)'} : {color: 'rgba(189,32,37,1)'}} >{change}</p>
           <div className="currency-volume">
-            <p className="width-3 light">{volumeDollars} USD</p>
-            <p className="width-2 light-grey">{volume} {abbreviation}</p>
+            <p className="t-right light">{volumeDollars} USD</p>
+            <p className="t-right light-grey">{volume} {abbreviation}</p>
           </div>
           <svg viewBox="0 0 322 100" className="chart">
             <polyline
               fill="none"
-              stroke={chartColor}
+              stroke={change[0] === '+' ? 'rgba(0,177,76,1)' : 'rgba(189,32,37,1)'}
               strokeWidth="4"
               points={points}
               strokeLinejoin="round"
@@ -42,11 +42,11 @@ CurrencyRow.propTypes = {
   index: PropTypes.number,
   currency: PropTypes.string,
   abbreviation: PropTypes.string,
-  marketCap: PropTypes.number,
-  price: PropTypes.number,
-  change: PropTypes.number,
-  volumeDollars: PropTypes.number,
-  volume: PropTypes.number,
+  marketCap: PropTypes.string,
+  price: PropTypes.string,
+  change: PropTypes.string,
+  volumeDollars: PropTypes.string,
+  volume: PropTypes.string,
   points: PropTypes.string,
   chartColor: PropTypes.string
 };
