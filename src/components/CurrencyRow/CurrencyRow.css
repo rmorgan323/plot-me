@@ -46,10 +46,10 @@ a {
   border-bottom: 1px solid #f1f2f2;
   transition: all .2s ease-in-out; }
   .CurrencyRow .currency-container {
-    width: 1040px;
+    width: 933px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 10px 40px;
     cursor: pointer;
     margin: auto; }
@@ -58,17 +58,11 @@ a {
     text-align: left; }
   .CurrencyRow .chart {
     width: 161px;
-    height: 50px; }
-  .CurrencyRow .width-0 {
-    width: 106px;
+    height: 50px;
+    margin-left: 43px; }
+  .CurrencyRow .t-left {
     text-align: left; }
-  .CurrencyRow .width-1 {
-    width: 50px; }
-  .CurrencyRow .width-2 {
-    width: 100px;
-    text-align: right; }
-  .CurrencyRow .width-3 {
-    width: 140px;
+  .CurrencyRow .t-right {
     text-align: right; }
   .CurrencyRow .light {
     font-weight: 500; }
@@ -76,14 +70,23 @@ a {
     font-weight: 500;
     color: #a7a9ac; }
   .CurrencyRow .currency-index {
-    width: 18px; }
+    width: 25px; }
+  .CurrencyRow .currency-info {
+    width: 150px; }
   .CurrencyRow .currency-name {
     font-size: 17px;
     font-weight: 900; }
   .CurrencyRow .currency-abbr {
     font-size: 12px;
     font-weight: 900; }
+  .CurrencyRow .currency-cap {
+    width: 121px; }
+  .CurrencyRow .currency-price {
+    width: 100px; }
+  .CurrencyRow .currency-change {
+    width: 100px; }
   .CurrencyRow .currency-volume {
+    width: 192px;
     display: flex;
     flex-direction: column;
     align-items: flex-end; }
