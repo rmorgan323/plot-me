@@ -6,8 +6,39 @@
   padding-bottom: 50px;
 
   .plotly-graph {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     margin-bottom: 20px;
+  }
+
+  .chart-tabs {
+    display: flex;
+    list-style-type: none;
+    width: 840px;
+    margin: 20px auto 0;
+  }
+
+  li {
+    font-size: 12px;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    width: 60px;
+  }
+
+  .tab-active {
+    background-color: #fff;
+    color: $grey5;
+  }
+
+  .tab-inactive {
+    background-color: $grey3;
+    @include std-transition;
+    color: #fff;
+    
+  }
+
+  .tab-inactive:hover {
+    background-color: $grey2;
   }
 
   .quote-chart {

@@ -17,7 +17,7 @@ const cleanDataObject = rawData => {
     dailyHigh: null,
     dailyLow: null
   };
-  const cleanedUp = keys.forEach((timeDataPoint, index) => {   // eslint-disable-line no-unused-vars
+  keys.forEach((timeDataPoint, index) => { 
     accum.x.unshift(moment(keys[index]).subtract(7, 'hours').format());
     accum.y.unshift(Math.floor(rawData['Time Series (Digital Currency Intraday)'][keys[index]]['1b. price (USD)']));
     accum.vy.unshift(Math.floor(rawData['Time Series (Digital Currency Intraday)'][keys[index]]['2. volume']));
