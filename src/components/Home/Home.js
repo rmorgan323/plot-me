@@ -45,7 +45,7 @@ class Home extends Component {
             currency={currency['Meta Data']['3. Digital Currency Name']}
             abbreviation={currency['Meta Data']['2. Digital Currency Code']}
             marketCap={accounting.formatMoney(marketCap)}
-            price={accounting.formatMoney(price)}
+            price={cleanObject.y[cleanObject.y.length - 1]}
             change={cleanObject.todayPercentage}
             volumeDollars={accounting.formatMoney(volumeDollars)}
             volume={accounting.formatNumber(Math.floor(volume))}
