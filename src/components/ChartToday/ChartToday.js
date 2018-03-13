@@ -1,8 +1,9 @@
 import React from 'react';
 import './ChartToday.css';
 import Plot from 'react-plotly.js';
+import PropTypes from 'prop-types';
 
-const ChartToday = ({ cleanData, currencyData, formattedMetaData }) => {
+const ChartToday = ({ cleanData }) => {
 
   return (
     <div className="ChartToday">
@@ -95,7 +96,11 @@ const ChartToday = ({ cleanData, currencyData, formattedMetaData }) => {
         }}
       />
     </div>
-  )
+  );
 };
 
 export default ChartToday;
+
+ChartToday.propTypes = {
+  cleanData: PropTypes.object
+};

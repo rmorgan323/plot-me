@@ -5,7 +5,6 @@ import accounting from 'accounting';
 
 const QuoteDetail = ({ metaData, high, low, oldestDate, highSinceOldest, lowSinceOldest }) => {
   const { volume, volumeDollars } = metaData;
-  console.log('asjdf', oldestDate)
 
   return (
     <div className="QuoteDetail">
@@ -42,5 +41,8 @@ export default QuoteDetail;
 QuoteDetail.propTypes = {
   metaData: PropTypes.object,
   high: PropTypes.string,
-  low: PropTypes.string
+  low: PropTypes.string,
+  oldestDate: PropTypes.string,
+  highSinceOldest: PropTypes.string,
+  lowSinceOldest: PropTypes.string
 };
