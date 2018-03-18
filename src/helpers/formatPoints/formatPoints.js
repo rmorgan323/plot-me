@@ -4,6 +4,7 @@ const formatPoints = (rawData, home) => {
   let lowValue = 1000000;
   let array = keys.reduce((priceArray, key, index) => {
     let yVal = Math.floor(rawData['Time Series (Digital Currency Intraday)'][key]['1b. price (USD)']);
+    
     if (yVal > highValue) { highValue = yVal; }
     if (yVal < lowValue) { lowValue = yVal; }
     priceArray.push([index * 2, yVal]);
