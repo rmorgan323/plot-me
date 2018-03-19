@@ -19,10 +19,10 @@ class Home extends Component {
 
   componentDidMount = async () => {
     // let currenciesOnLoad = ['BTC', 'ETH', 'BCH', 'LTC', 'NEO', 'XLM', 'ADA', 'EOS', 'XMR', 'DASH', 'IOT', 'XEM', 'USDT', 'ETC', 'TRX', 'VEN', 'LSK', 'QTUM', 'BTG']
-    let currenciesOnLoad = ['BTC', 'ETH', 'BCH', 'LTC'];
+    let currenciesOnLoad = ['BTC', 'ETH'];
     // let currenciesOnLoad = ['BTC'];
     let currencyData = await getCurrencies(currenciesOnLoad);
-
+    console.log('hello 1', currencyData)
     this.setState({ currencyData: currencyData, isLoading: false });
   }
 
