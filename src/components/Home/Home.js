@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import getCurrencies from '../../helpers/getCurrencies/getCurrencies';
 import formatPoints from '../../helpers/formatPoints/formatPoints';
 import cleanDataObject from '../../helpers/cleanDataObject/cleanDataObject';
-import CurrencyRow from '../CurrencyRow/CurrencyRow';
+import CurrencyRow froqm '../CurrencyRow/CurrencyRow';
 import accounting from 'accounting';
 import Loading from '../Loading/Loading';
 import './Home.css';
@@ -19,7 +19,7 @@ class Home extends Component {
 
   componentDidMount = async () => {
     // let currenciesOnLoad = ['BTC', 'ETH', 'BCH', 'LTC', 'NEO', 'XLM', 'ADA', 'EOS', 'XMR', 'DASH', 'IOT', 'XEM', 'USDT', 'ETC', 'TRX', 'VEN', 'LSK', 'QTUM', 'BTG']
-    let currenciesOnLoad = ['BTC', 'ETH', 'BCH', 'LTC'];
+    let currenciesOnLoad = ['BTC', 'ETH'];
     // let currenciesOnLoad = ['BTC'];
     let currencyData = await getCurrencies(currenciesOnLoad);
 

@@ -6,7 +6,7 @@ const formatCurrencyData = (rawData) => {
   const keys = Object.keys(rawData['Time Series (Digital Currency Intraday)']);
   const calcPrice = Math.floor(rawData['Time Series (Digital Currency Intraday)'][keys[0]]['1b. price (USD)']);
   const calcVolume = Math.floor(rawData['Time Series (Digital Currency Intraday)'][keys[0]]['2. volume']);
-
+  
   let result = {
     name: rawData['Meta Data']['3. Digital Currency Name'],
     abbr: rawData['Meta Data']['2. Digital Currency Code'],

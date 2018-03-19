@@ -43,6 +43,6 @@ QuoteDetail.propTypes = {
   high: PropTypes.string,
   low: PropTypes.string,
   oldestDate: PropTypes.string,
-  highSinceOldest: PropTypes.string,
-  lowSinceOldest: PropTypes.string
+  highSinceOldest: PropTypes.number,
+  lowSinceOldest: PropTypes.number
 };

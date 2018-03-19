@@ -26,7 +26,7 @@ const ChartDaily = ({ cleanDailyData, currencyName }) => {
                 color: '#fff'
               }, 
               bordercolor: '#fff', 
-              bgcolor: x[0] < x[x.length - 1] ? 'rgba(0,177,76,.6)' : 'rgba(189,32,37,.6)'
+              bgcolor: x[0] < x[x.length - 1] ? 'rgba(0,177,76,1)' : 'rgba(189,32,37,1)'
             },
             text: y,
             hovermode: 'closest'
