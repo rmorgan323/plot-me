@@ -19,8 +19,8 @@ describe('Home tests', () => {
   });
 
   it.skip('should set state correctly when component mounts', async () => {
-    const renderedHome = await shallow(<Home />);
+    // const renderedHome = await shallow(<Home />);
 
-    console.log(renderedHome);
+    // console.log(renderedHome);
   });
 });

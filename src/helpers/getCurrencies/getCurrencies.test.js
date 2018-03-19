@@ -1,4 +1,3 @@
-import React from 'react';
 import getCurrencies from './getCurrencies';
 
 describe('getCurrencies tests', () => {
@@ -6,7 +5,7 @@ describe('getCurrencies tests', () => {
     Promise.resolve({
       json: () => Promise.resolve({ status: 'success' })
     })
-  )
+  );
 
   it('should be a function', () => {
     expect(getCurrencies).toBeAFunction;

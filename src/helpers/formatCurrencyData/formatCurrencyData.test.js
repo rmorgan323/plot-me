@@ -1,6 +1,5 @@
 import formatCurrencyData from './formatCurrencyData';
 import mockGetCurrenciesData from '../../mockData/mockGetCurrenciesData';
-import util from 'util';
 
 describe('formatCurrencyData tests', () => {
   it('should be a function', () => {
@@ -17,8 +16,8 @@ describe('formatCurrencyData tests', () => {
       change: '-1.38',
       volume: '71,473',
       volumeDollars: '$43,955,895',
-      points: [ '0,100 2,85 4,57 6,28 8,0', '#00b14c' ] 
-    }
+      points: ['0,100 2,85 4,57 6,28 8,0', '#00b14c'] 
+    };
     const mockReturn = formatCurrencyData(mockGetCurrenciesData);
     
     expect(mockReturn).toEqual(expected);

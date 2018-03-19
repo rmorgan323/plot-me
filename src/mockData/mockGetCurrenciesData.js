@@ -1841,6 +1841,6 @@ const mockGetCurrenciesData = {
       "3. market cap (USD)": "43856007.77850700"
     }
   }
-}
+};
 
 export default mockGetCurrenciesData; 

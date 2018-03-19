@@ -2,7 +2,6 @@ import moment from 'moment';
 import accounting from 'accounting';
 
 const cleanDataObject = rawData => {
-  console.log('heyo', rawData)
   const keys = Object.keys(rawData['Time Series (Digital Currency Intraday)']);
   let accum = {
     currency: rawData['Meta Data']['3. Digital Currency Name'],

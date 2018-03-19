@@ -1,5 +1,4 @@
 import getDailyData from './getDailyData';
-import React from 'react';
 import apiKey from '../../apiKey';
 
 describe('getDailyData tests', () => {
@@ -7,7 +6,7 @@ describe('getDailyData tests', () => {
     Promise.resolve({
       json: () => Promise.resolve()
     })
-  )
+  );
 
   it('should be a function', () => {
     expect(getDailyData).toBeAFunction;
@@ -19,6 +18,6 @@ describe('getDailyData tests', () => {
     ];
 
     await getDailyData('BTC');
-    expect(window.fetch).toHaveBeenCalledWith(...expected)
+    expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 });
